@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "AFNetworkActivityOutput.h"
 
 typedef NS_ENUM(NSUInteger, AFHTTPRequestLoggerLevel) {
   AFLoggerLevelOff,
@@ -63,6 +64,11 @@ typedef NS_ENUM(NSUInteger, AFHTTPRequestLoggerLevel) {
  Start logging requests and responses.
  */
 - (void)startLogging;
+
+/**
+ Start logging requests and responses with custom output destination
+ */
+- (void)startLogging:(id<AFNetworkActivityOutput>)output;
 
 /**
  Stop logging requests and responses.
